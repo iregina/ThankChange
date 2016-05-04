@@ -1,4 +1,6 @@
 <h1> My Posts </h1>
-<% @posts.each do | post | %>
-	<p><%= post.description %></p>
-<% end %> 
+<% if @posts %>
+	<% @posts.each do | post | %>
+		<p><%= post.description %></p>
+	<% end %> 
+<% end %>
