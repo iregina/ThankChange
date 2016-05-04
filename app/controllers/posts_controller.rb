@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
 	def new
+    @post = Post.new
 	end
 
 	def create
@@ -7,16 +8,19 @@ class PostsController < ApplicationController
 	  	@post = Post.new post_params
 	  	@post.author_id = @user.id
 	  	@post.save
-      	redirect_to @post
+      if @post.valid?
+        redirect_to @post, notice: "Thank you for your post."
+      else
+        render :new, :locals => {:post => @post}
+      end
   	end
 
   	def show
   		@post = Post.find(params[:id])
   	end
 
-  	private 
 
-  	   private
+  	private
 
    def post_params
       params.require(:post).permit(:description)
