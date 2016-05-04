@@ -9,7 +9,8 @@ class PostsController < ApplicationController
 	  	@post.author_id = @user.id
 	  	@post.save
       if @post.valid?
-        redirect_to @post, notice: "Thank you for your post."
+        redirect_to @post
+        flash[:success] = "Thank you for your post."
       else
         render :new, :locals => {:post => @post}
       end
