@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # root 'welcome#index'
   root "pages#home"
   get "about" => "pages#about"
+  resources :users, :only => [:show]
   resources :posts
   devise_for :users, :controllers => { registrations: 'registrations' }
 
