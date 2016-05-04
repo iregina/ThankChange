@@ -15,7 +15,9 @@
 </div>
 
 <h2> Latest Tweets </h2>
+<% if @posts %>
 <% @posts.each do | post | %>
 	<% @id = post.author_id %>
 	<p>"<%= post.description %>" written by <%= User.find(@id).first_name %></p>
 <% end %> 
+<% end %>
