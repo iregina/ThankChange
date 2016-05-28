@@ -23,12 +23,61 @@ $jumbotron-bg:                     white;
   font-color: white;
 }
 
+.jumbotron_title{
+  font-size: 45px;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px;
+}
+
 .profile-button:hover{
   background-color: #ADD8E6 !important;
 }
 
+.create_post_button{
+  background-color: #ADD8E6 !important;
+  width: 50%;
+}
+
+.profile_image{
+  text-align: center;
+}
+
+.indiv_tweet{
+  background-color: white;
+  border-radius: 10px;
+
+}
+
+.profile_section{
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.profile_section p{
+  color:#D3D3D3;
+}
+
+.indiv_tweet p{
+  margin-left: 20px;
+  color:#D3D3D3;
+}
+
+.indiv_tweet h4{
+  margin-top: -8px;
+  margin-left: 40px;
+  padding-bottom: 5px;
+
+}
+
+.title{
+  text-align: center;
+  text-shadow: 1px 1px;
+}
+
 .navbar-brand {
-     font-weight: bold;
+     vertical-align: middle;
+     margin-top: -10px;
 }
 
 .checkbox input[type="checkbox"], .checkbox-inline input[type="checkbox"] {

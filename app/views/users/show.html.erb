@@ -7,32 +7,50 @@
 	<% end %>
 </div>
 
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+        	<div class="profile_image">
+		 	<h2 class="title">Photo:</h2>
+		 	<%= image_tag("bear.jpg", border: 0, width: 250, height: 250) %>
+		 	</div>
+        	<div>
+				<h2 class="title">Profile:</h2>
+				<div class="profile_section">
+				<p>About Me:</p>
+				<% if @user.intro %>
+					<h4><%=@user.intro %></h4>
+				<% end %>
+				<p>My Purpose in Life:</p>
+				<% if @user.purpose %>
+					<h4><%=@user.purpose %></h4>
+				<% end %>
+				<p>My interests in life are:</p>
+				<% if @user.interests %>
+					<h4><%=@user.interests %></h4>
+				<% end %>
+				<p>What my ideal world would look like:</p>
+				<% if @user.ideal_world %>
+					<h4><%=@user.ideal_world %></h4>
+				<% end %>
+			</div>
+			</div>
+        </div>
 
-<div class="Profile Information:">
-	<h2>About Me:</h2>
-	<% if @user.intro %>
-		<h4><%=@user.intro %></h4>
-	<% end %>
-	<% if @user.purpose %>
-		<h4><%=@user.purpose %></h4>
-	<% end %>
-
-	<% if @user.interests %>
-		<h4><%=@user.interests %></h4>
-	<% end %>
-
-	<% if @user.ideal_world %>
-		<h4><%=@user.ideal_world %></h4>
-	<% end %>
-</div> 
-
-<div class="Profile Posts">
-<h2> My Latest Tweets: </h2>
-	<% if @posts.length > 0 %>
-		<% @posts.each do | post | %>
-			<p><%= post.description %></p>
-		<% end %> 
-	<% else %>
-		<p> No tweets yet! </p>
-	<% end %>
+        <div class="col-md-7">
+			<div class="Profile Posts">
+			<h2 class="title"> My Snaps: </h2>
+				<% if @posts.length > 0 %>
+					<% @posts.each do | post | %>
+					<div class="indiv_tweet">
+						<p>Posted on <%= post.created_at.to_formatted_s(:short) %>:</p>
+						<h4><%= post.description %></h4>
+					</div>
+					<% end %> 
+				<% else %>
+					<p> No tweets yet! </p>
+				<% end %>
+			</div>	
+        </div>
+    </div>
 </div>
