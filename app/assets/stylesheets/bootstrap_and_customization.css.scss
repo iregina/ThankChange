@@ -15,6 +15,18 @@ $jumbotron-bg:                     white;
      text-align: center;
 }
 
+.profile-button{
+  padding: 10px 24px;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 400;
+  font-color: white;
+}
+
+.profile-button:hover{
+  background-color: #ADD8E6 !important;
+}
+
 .navbar-brand {
      font-weight: bold;
 }
@@ -31,4 +43,11 @@ $jumbotron-bg:                     white;
    width: 280px;
    color: black;
    padding-top: 20px;
+}
+
+.profileHeader h1 {
+  font-size: 65px;
+  text-shadow: 1px 1px;
+  letter-spacing: 1px;
+
 }

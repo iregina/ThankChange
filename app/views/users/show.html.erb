@@ -1,6 +1,38 @@
-<h1> My Posts </h1>
-<% if @posts %>
-	<% @posts.each do | post | %>
-		<p><%= post.description %></p>
-	<% end %> 
-<% end %>
+<div class="profileHeader">
+	<% if @user.first_name.length > 1 %>
+		<h1><%= @user.first_name + " " + @user.last_name%></h1>
+	<% else %>
+		<h1><%= @user.email %></h1>
+		<p>Please update your first and last name in 'Profile & Account Settings'</p>
+	<% end %>
+</div>
+
+
+<div class="Profile Information:">
+	<h2>About Me:</h2>
+	<% if @user.intro %>
+		<h4><%=@user.intro %></h4>
+	<% end %>
+	<% if @user.purpose %>
+		<h4><%=@user.purpose %></h4>
+	<% end %>
+
+	<% if @user.interests %>
+		<h4><%=@user.interests %></h4>
+	<% end %>
+
+	<% if @user.ideal_world %>
+		<h4><%=@user.ideal_world %></h4>
+	<% end %>
+</div> 
+
+<div class="Profile Posts">
+<h2> My Latest Tweets: </h2>
+	<% if @posts.length > 0 %>
+		<% @posts.each do | post | %>
+			<p><%= post.description %></p>
+		<% end %> 
+	<% else %>
+		<p> No tweets yet! </p>
+	<% end %>
+</div>
